@@ -1,0 +1,39 @@
+body {
+    display: grid;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    height: 200px;
+}
+
+#logo-header {
+    width: 200px;
+    height: 100px;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 375px);
+    grid-gap: 1rem;
+}
+
+.produkter {
+    display: flex;
+    flex-direction: column;
+}
+
+.produkter img {
+    width: 100%;
+}
+
+.display-flex-row {
+    display: flex;
+    flex-direction: row;
+}
