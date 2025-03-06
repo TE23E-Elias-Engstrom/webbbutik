@@ -1,32 +1,67 @@
 body {
     display: grid;
+    margin: auto;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #333;
+    
+    background-color: #8F8BA4;
     color: white;
-    height: 200px;
+    height: 164px;
 }
 
 #logo-header {
-    width: 200px;
-    height: 100px;
+    width: 25%;
+    height: 100%;
 }
 
+.info {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.varukorg {
+    width: 216px;
+}
+
+.varukorg-header img {
+    width:  100%;
+    height: 100%;
+    background-color: #44424F;
+}
 
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, 375px);
-    grid-gap: 1rem;
+    grid-gap: 5rem;
+    justify-content: center;
+    background-color: #726E87;
 }
+
+
+
 
 .produkter {
     display: flex;
     flex-direction: column;
+    background-color: #5C596D;
+}
+
+.produkt-namn {
+    background-color: #BEBBD0;
+    height: 67px;
+    text-align: center;
+}
+
+.produkt-namn h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .produkter img {
@@ -36,4 +71,15 @@ main {
 .display-flex-row {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+}
+
+button {
+    background-color: lime;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin: 15px;
+    width: 100%;
+    font-size: large;
 }
