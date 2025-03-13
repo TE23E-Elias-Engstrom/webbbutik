@@ -27,7 +27,10 @@ header {
     justify-content: flex-end;
 }
 
-
+.info a {
+    color: #44424F;
+    text-decoration: none;
+}
 
 .varukorg {
     width: 216px;
