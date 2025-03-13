@@ -11,10 +11,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background-color: #8F8BA4;
     color: white;
     height: 20vh;
+}
+
+.varukorg {
+    
 }
 
 #logo-header {
