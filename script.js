@@ -13,5 +13,22 @@ let produkter =
 let korg = []
 
 
-
 // ========================================
+
+function visaKorg() {
+    let varukorgElement = document.querySelector(".varukorg")
+    if (varukorgElement) {
+        varukorgElement.style.display = "flex"
+    }
+}   
+
+function stängVarukorg() {
+    let varukorgElement = document.querySelector(".varukorg")
+    if (varukorgElement) {
+        varukorgElement.style.display = "none"
+    }
+}
+
+function läggTillProdukt(id) {
+    console.log(id)
+}

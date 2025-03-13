@@ -16,8 +16,14 @@ header {
     height: 20vh;
 }
 
+.göm-knapp {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .varukorg {
-    
+    display: none;
 }
 
 #logo-header {
@@ -43,9 +49,10 @@ header {
 }
 
 .varukorg-header img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     background-color: #44424F;
+    object-fit: contain;
 }
 
 main {
