@@ -11,22 +11,20 @@ let produkter =
     ]
 
 let korg = []
+let isopen = false
+let varukorgElement = document.querySelector("#varukorg")
 
 
 // ========================================
 
 function visaKorg() {
-    let varukorgElement = document.querySelector(".varukorg")
-    if (varukorgElement) {
+    if (isopen) {
         varukorgElement.style.display = "flex"
-    }
-}   
-
-function stängVarukorg() {
-    let varukorgElement = document.querySelector(".varukorg")
-    if (varukorgElement) {
+    } else {
         varukorgElement.style.display = "none"
     }
+    isopen = !isopen
+    console.log(isopen)
 }
 
 function läggTillProdukt(id) {
