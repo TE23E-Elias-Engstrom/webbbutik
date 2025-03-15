@@ -35,9 +35,26 @@ function läggTillProdukt(id) {
     korg.push(produkt)
 
     let elem = document.createElement("div")
-    elem.innerHTML = "<h3>" + produkt.name + "</h3><p>" + produkt.pris + " kr</p>"
+    elem.innerHTML = "<h3>" + produkt.name + "</h3><p>" + produkt.pris + " kr</p><button class='tabort' onclick='taBortProdukt(" + produkt.id + ")'>X</button>"
     elem.classList.add("produkt")
     varukorgElement.appendChild(elem)
+
+    totalPrisElement.innerHTML = "Totalt: " + korg.reduce((acc, curr) => acc + curr.pris, 0) + " kr"
+}
+
+function taBortProdukt(id) {
+
+    let produkt = korg.find(p => p.id === id)
+    console.log(produkt)
+
+    korg = korg.filter(p => p.id !== id)
+
+    let elems = document.querySelectorAll(".produkt")
+    elems.forEach(e => {
+        if (e.innerHTML.includes(produkt.name)) {
+            e.remove()
+        }
+    })
 
     totalPrisElement.innerHTML = "Totalt: " + korg.reduce((acc, curr) => acc + curr.pris, 0) + " kr"
 }
