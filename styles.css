@@ -55,8 +55,16 @@ header {
     gap: 0.5rem;
 }
 
-.varukorg {
-    width: 216px;
+#varukorg {
+    min-width: 5rem;
+    min-height: 5rem;
+    position: absolute;
+    right: 2rem;
+    top: 5.5rem;
+    background-color: gray;
+    z-index: 5;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .varukorg-header img {
@@ -122,6 +130,12 @@ main {
     width: 10rem;
     font-size: large;
     font-family: Jaro, Roboto, sans-serif;
+}
+
+.produkt {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 footer {

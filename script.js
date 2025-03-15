@@ -13,20 +13,31 @@ let produkter =
 let korg = []
 let isopen = false
 let varukorgElement = document.querySelector("#varukorg")
+let totalPrisElement = document.querySelector("#totalpris")
 
 
 // ========================================
 
 function visaKorg() {
+    isopen = !isopen
     if (isopen) {
         varukorgElement.style.display = "flex"
     } else {
         varukorgElement.style.display = "none"
     }
-    isopen = !isopen
     console.log(isopen)
 }
 
 function läggTillProdukt(id) {
-    console.log(id)
+    let produkt = produkter.find(p => p.id === id)
+    console.log(produkt)
+
+    korg.push(produkt)
+
+    let elem = document.createElement("div")
+    elem.innerHTML = "<h3>" + produkt.name + "</h3><p>" + produkt.pris + " kr</p>"
+    elem.classList.add("produkt")
+    varukorgElement.appendChild(elem)
+
+    totalPrisElement.innerHTML = "Totalt: " + korg.reduce((acc, curr) => acc + curr.pris, 0) + " kr"
 }
