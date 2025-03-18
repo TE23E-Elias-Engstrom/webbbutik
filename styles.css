@@ -81,7 +81,7 @@ header {
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, 375px);
-    grid-gap: 5rem;
+    grid-gap: 2.5rem;
     justify-content: center;
     background-color: #726E87;
 
@@ -97,8 +97,8 @@ main {
     background-color: #BEBBD0;
     height: 67px;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .produkt-namn h2 {
@@ -126,10 +126,12 @@ main {
 .produkter button {
     background-color: lime;
     color: black;
+    margin: 1rem;
     border: none;
     width: 10rem;
     font-size: large;
     font-family: Jaro, Roboto, sans-serif;
+    cursor: pointer;
 }
 
 .produkt {
@@ -157,4 +159,27 @@ footer img {
 footer h2 {
     margin: 0;
     font-weight: 100;
+}
+
+@media screen and (max-width: 375px) {
+
+    body {
+        max-width: 375px;
+    }
+
+    #logo-header {
+        width: 10rem;
+        aspect-ratio: 3;
+    }
+
+    footer img {
+        width: 15rem;
+        height: auto;
+    }
+    
+
+    main {
+        grid-template-columns: repeat(auto-fill, 300px);
+    }
+    
 }
