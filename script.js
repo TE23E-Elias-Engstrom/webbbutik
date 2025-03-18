@@ -10,10 +10,16 @@ let produkter =
 
     ]
 
-let korg = []
 let isopen = false
 let varukorgElement = document.querySelector("#varukorg")
 let totalPrisElement = document.querySelector("#totalpris")
+
+
+let korg = []
+if (localStorage.getItem("korg")) {
+    korg = JSON.parse(localStorage.getItem("korg"))
+    uppdateraKorg()
+}
 
 
 // ========================================
@@ -34,12 +40,10 @@ function läggTillProdukt(id) {
 
     korg.push(produkt)
 
-    let elem = document.createElement("div")
-    elem.innerHTML = "<h3>" + produkt.name + "</h3><p>" + produkt.pris + " kr</p><button class='tabort' onclick='taBortProdukt(" + produkt.id + ")'>X</button>"
-    elem.classList.add("produkt")
-    varukorgElement.appendChild(elem)
+    localStorage.setItem("korg", JSON.stringify(korg))
 
-    totalPrisElement.innerHTML = "Totalt: " + korg.reduce((acc, curr) => acc + curr.pris, 0) + " kr"
+    uppdateraKorg()
+
 }
 
 function taBortProdukt(id) {
@@ -49,12 +53,20 @@ function taBortProdukt(id) {
 
     korg = korg.filter(p => p.id !== id)
 
-    let elems = document.querySelectorAll(".produkt")
-    elems.forEach(e => {
-        if (e.innerHTML.includes(produkt.name)) {
-            e.remove()
-        }
+    localStorage.setItem("korg", JSON.stringify(korg))
+
+    uppdateraKorg()
+}
+
+function uppdateraKorg() {
+    varukorgElement.innerHTML = '<h4 id="totalpris">Totalt: ' + korg.reduce((acc, curr) => acc + curr.pris, 0) + ' kr</h4>'
+    korg.forEach(p => {
+        let elem = document.createElement("div")
+        elem.innerHTML = "<h3>" + p.name + "</h3><p>" + p.pris + " kr</p><button class='tabort' onclick='taBortProdukt(" + p.id + ")'>X</button>"
+        elem.classList.add("produkt")
+        varukorgElement.appendChild(elem)
+
+
     })
 
-    totalPrisElement.innerHTML = "Totalt: " + korg.reduce((acc, curr) => acc + curr.pris, 0) + " kr"
 }
